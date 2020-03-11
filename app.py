@@ -40,10 +40,14 @@ def predict():
     # df = pd.DataFrame([input_])
     # train_stats = pd.read_csv('stats/train_stats' + str(input_["carrier"])+ '.csv')
     # df = norm(df, train_stats)
-    test_predictions_input = model.predict(df).flatten()
+    test_predictions_input = model.predict(df).flatten()   
     print(test_predictions_input[0])
+    errors = pd.read_csv('errors/errors.csv')
+    error_ = errors[errors['airline'] == input_["carrier"]]
+    error_ = error_.iloc[0]['error']
+    # print(error_.iloc[0]['error'])
     # return jsonify(str(test_predictions_input[0]))
-    return render_template("result.html", prediction=test_predictions_input[0])
+    return render_template("result.html", prediction=round(test_predictions_input[0], 2), error=round(error_, 2))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
