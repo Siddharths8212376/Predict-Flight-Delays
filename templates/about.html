@@ -1,4 +1,5 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
+<html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -43,25 +44,39 @@
   display: table;
   clear: both;
 }
+p{
+  text-align: justify;
+}
 .about-section {
   padding: 50px;
   text-align: center;
   /*background-color: #474e5d;*/
   color: whitesmoke;
+}
+
+button{
+  float: right;
+  margin: 50px;
+  border-radius:20px;
+  height: 30px;
+  width: 150px;
+  background-color:rgba(0,0,0,0.1);
+  color: white;
+  font-weight: bold;
+}
  </style>
 </head>
 
 <div class="about-section">
     <h1>Flight Delay Prediction System</h1>
-    <p>Why should you use this</p>
+    <h3>Why should you use this?</h3>
   </div>
 <body>
 
 
   <div class="row">
-  <div class="column" style=/*"background-color:#aaa;"*/>
-    <h2></h2>
-    <p>Some A flight delay is said to occur when an airline lands or
+  <div class="column">
+    <p>A flight delay is said to occur when an airline lands or
      takes off later than its scheduled arrival or departure time
      respectively. Conventionally if a flight's departure time or
      arrival time is greater than 15 minutes than its scheduled
@@ -72,12 +87,19 @@ recognized airline. An Intelligent and Automated Prediction
 System is a must in this case that can predict possible
 airline delay.</p>
   </div>
-  <div class="column" style=/*"background-color:#bbb;"*/>
+  <div class="column">
     <h2></h2>
     <p>This application uses the technology of Deep Neural Networks to predict whether a flight will be delayed or not in real time. 
     All you have to do is fill in the details of the flight which you wish to monitor and this application will predict the 
     delay for you. </p>
   </div>
 </div>
-  
+
+<button id="redirectHome">Go Predict Delays</button>
+<script type="text/javascript">
+  document.getElementById("redirectHome").onclick = function(){
+      location.href = "http://127.0.0.1:5000/index";
+  };
+</script>
 </body>
+</html>
