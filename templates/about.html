@@ -1,0 +1,83 @@
+<!DOCTYPE <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+
+
+
+
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.about-section {
+  padding: 50px;
+  text-align: center;
+  /*background-color: #474e5d;*/
+  color: whitesmoke;
+ </style>
+</head>
+
+<div class="about-section">
+    <h1>Flight Delay Prediction System</h1>
+    <p>Why should you use this</p>
+  </div>
+<body>
+
+
+  <div class="row">
+  <div class="column" style=/*"background-color:#aaa;"*/>
+    <h2></h2>
+    <p>Some A flight delay is said to occur when an airline lands or
+     takes off later than its scheduled arrival or departure time
+     respectively. Conventionally if a flight's departure time or
+     arrival time is greater than 15 minutes than its scheduled
+     departure and arrival times respectively, then it is considered that there is a departure or arrival delay with respect
+     to corresponding airports.Delays make
+passengers lose their trust on such famous and internationally
+recognized airline. An Intelligent and Automated Prediction
+System is a must in this case that can predict possible
+airline delay.</p>
+  </div>
+  <div class="column" style=/*"background-color:#bbb;"*/>
+    <h2></h2>
+    <p>This application uses the technology of Deep Neural Networks to predict whether a flight will be delayed or not in real time. 
+    All you have to do is fill in the details of the flight which you wish to monitor and this application will predict the 
+    delay for you. </p>
+  </div>
+</div>
+  
+</body>
