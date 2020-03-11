@@ -14,6 +14,49 @@
         <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+        <link href="https://fonts.googleapis.com/css?family=Aclonica|Maven+Pro|Prompt|Russo+One&display=swap" rel="stylesheet">
+
+
+        <style>
+            #Home{
+                float: left;
+                margin-left: 20px;
+                margin-top: 20px;
+                border-radius:20px;
+                height: 40px;
+                width: 120px;
+                background-color:rgba(0,0,0,0.1);
+                color: white;
+                font-weight: bold;
+            }
+            button{
+                padding: 10px;
+            }
+            h1{
+                /* font-family: 'Allerta Stencil', Sans-serif; */
+                font-family: 'Prompt', sans-serif;
+                /* font-family: 'Maven Pro', sans-serif; */
+                /* font-family: 'Russo One', sans-serif; */
+                /* font-family: 'Aclonica', sans-serif; */
+            }
+            input{
+                border-radius: 20px;
+                height:40px;
+                padding:10px;
+                margin:5px;
+                font-family: 'Prompt', sans-serif;
+            }
+
+            #submit{
+                margin-top: 20px;
+                font-family: 'Prompt', sans-serif;;
+                border-radius: 20px;
+                justify-content: center;
+            }
+
+
+        </style>
 
     </head>
     <body>
@@ -24,28 +67,31 @@
             Our aim is to ensure that no passenger's time is neglected and it's given equal significance. In emergency cases like organ transportations, it serves as a vital part. 
             Our goal is to provide with a new era of air travel devoid of time wastage.
         </p> -->
+        <button id="Home">
+            Return Home
+        </button>
+        <script type="text/javascript">
+            document.getElementById("Home").onclick = function(){
+                location.href = "http://127.0.0.1:5000/";
+            };
+          </script>
         <div class="login">
             <h1>Predict Flight Delays</h1>
-        
              <!-- Main Input For Receiving Query to our ML -->
             <form action="{{ url_for('predict')}}"method="post">
                 <input type="text" name="Day of Week" placeholder="Day Of Week (1-7)" required="required" />
                 <input type="text" name="airline" placeholder="Airline" required="required" />
-                <input type="text" name="origin" placeholder="Origin Airport" required="required" />
-                <input type="text" name="destination" placeholder="Destination Airport" required="required" />
-                <input type="text" name="sd" placeholder="Scheduled Departure" required="required" />
-                <input type="text" name="ddelay" placeholder="Departure Delay" required="required" />
-                <input type="text" name="sa" placeholder="Scheduled Arrival" required="required" />
-                <input type="text" name="dist" placeholder="Distance" required="required" />
+                <input type="text" name="origin" placeholder="Origin Airport (acronym)" required="required" />
+                <input type="text" name="destination" placeholder="Destination Airport (acronym)" required="required" />
+                <input type="text" name="sd" placeholder="Scheduled Departure (HHMM)" required="required" />
+                <input type="text" name="ddelay" placeholder="Departure Delay (minutes)" required="required" />
+                <input type="text" name="sa" placeholder="Scheduled Arrival (HHMM)" required="required" />
+                <input type="text" name="dist" placeholder="Distance (km)" required="required" />
         
-                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                <button id="submit" type="submit" class="btn btn-primary btn-block btn-large">Predict Delay</button>
             </form>
         
-           <br>
-           <br>
-           {{ prediction_text }}
-        
-         </div>
+        </div>
         
         <script src="" async defer></script>
     </body>
