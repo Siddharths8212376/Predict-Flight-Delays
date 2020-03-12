@@ -4,12 +4,6 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
-
-
-
-
-
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
@@ -22,119 +16,138 @@
   <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Aclonica|Maven+Pro|Prompt|Russo+One&display=swap" rel="stylesheet">
 <style>
 
 
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 /* Create two equal columns that floats next to each other */
+
+
+
+/* Clear floats after the columns */    
+
+
+
+/* body {
+  background: #e3e3e3;
+  padding: 50px 0;
+} */
+/* body {
+    /* position: relative; */
+    /* background: #5C97FF; */
+    /* overflow: hidden; 
+} */
+/* body:before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background-image: url('https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-position: 50% 0;
+    background-size: cover;
+} */
+
 .column {
   float: left;
   width: 50%;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  height: 300px;
+  opacity: 0.4; 
+  /* Should be removed. Only for demonstration */
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+body{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.8;
+    background-image: url('https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-position: 50% 0;
+    background-size: cover;
 }
-p{
-  text-align: justify;
-}
-.about-section {
-  padding: 50px;
-  text-align: center;
-  /*background-color: #474e5d;*/
-  color: whitesmoke;
-}
+ .column p {
+    /*padding: 50px;*/
+    text-align: justify;
+    z-index: 2;
+    position: relative;
+    font-size:smaller;
+    color: #fff;
+    opacity: 1;
+    color:black;
+    /* font-family: 'Prompt', sans-serif;; */
+    font-weight: bold;
 
-button{
+} 
+
+body h1 {
+    /*padding: 50px;*/
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+} 
+article {
+  background: #fff;
+  padding: 15px;
+}
+body button{
   padding:10px;
   float: right;
   margin: 50px;
   border-radius:20px;
   height: 40px;
   width: 150px;
-  background-color:rgba(0,0,0,0.1);
+  z-index: inherit;
+  background-color:rgba(0,0,0,0.2);
   color: white;
-  font-weight: bold;
+
 }
- </style>
+/*body{
+background-image: url('https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80');
+height: 100%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover; */
+.column {
+ height:350px;
+ width:400px;
+ padding: 20px;
+ margin: 20px;
+ border-radius: 20px;
+ 
+
+}
+.row{
+ display: flex;
+ justify-content: center;
+}
+</style>
 </head>
 
 
-<style>
 
-         
-
-         
-
-
-
-  /*body {
-    background: #e3e3e3;
-    padding: 50px 0;*/
-  }
-  body {
-      position: relative;
-      background: #5C97FF;
-      overflow: hidden;
-  }
-  body:before {
-      content: ' ';
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      opacity: 0.6;
-      background-image: url('https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
-      background-position: 50% 0;
-      -ms-background-size: cover;
-      -o-background-size: cover;
-      -moz-background-size: cover;
-      -webkit-background-size: cover;
-      background-size: cover;
-  }
-    body p {
-      /*padding: 50px;*/
-      text-align: center;
-      z-index: 2;
-      position: relative;
-      color: #fff;
-  } 
-
-  body h1 {
-      /*padding: 50px;*/
-      text-align: center;
-      z-index: 2;
-      position: relative;
-      color: #fff;
-  } 
-  article {
-    background: #fff;
-    padding: 15px;
-  }
- /*body{
- background-image: url('https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80');
- height: 100%;
- background-repeat: no-repeat;
- background-attachment: fixed;
- background-position: center;
- background-size: cover; */
- 
-</style>
 
 <body >
 
@@ -147,7 +160,7 @@ button{
 
 
 <div class="row">
-<div class="column" style=/*"background-color:#aaa;"*/>
+<div class="column" style="background-color:#aaa;">
 <h2></h2>
 <p>A flight delay is said to occur when an airline lands or
 takes off later than its scheduled arrival or departure time
@@ -158,7 +171,7 @@ to corresponding airports.Delays causes inconvinience for everyone, both the pas
 System is a must in this case that can predict possible
 airline delay.</p>
 </div>
-<div class="column" style=/*"background-color:#bbb;"*/>
+<div class="column" style="background-color:#bbb;">
 <h2></h2>
 <p>This application uses the technology of Deep Neural Networks to predict whether a flight will be delayed or not in real time. 
 This ensures that the predictions are accurate and to the point. Don't worry! Its very easy to use. Why wait anymore? Sign up, fill in the details of the required flight and 
@@ -166,12 +179,13 @@ predict the delay!! </p>
 </div>
 </div>
 
-<button id="redirectHome">Go Predict Delays</button>
+<button id="goIndex" type="button" class="button">Go Predict Delays</button>
 <script type="text/javascript">
-  document.getElementById("redirectHome").onclick = function(){
-      location.href = "http://127.0.0.1:5000/index";
+  document.getElementById("goIndex").onclick = function(){
+      window.location = "http://127.0.0.1:5000/index";
   };
 </script>
+
 </body>
 
 </html>
