@@ -17,5 +17,4 @@ Simply input your flight details and if your flight is in our inventory, the too
 
 
 
-###### Disclaimer:
-The Delay Predictor is for entertainment purposes only - it is based on statistics and algorithms which are not definitive. Check with your airline for actual delay announcements. 
+###### Disclaimer: The Delay Predictor is for entertainment purposes only - it is based on statistics and algorithms which are not definitive. Check with your airline for actual delay announcements. 
