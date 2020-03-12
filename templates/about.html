@@ -68,32 +68,102 @@ button{
  </style>
 </head>
 
+
+<style>
+
+         
+
+         
+
+
+
+  /*body {
+    background: #e3e3e3;
+    padding: 50px 0;*/
+  }
+  body {
+      position: relative;
+      background: #5C97FF;
+      overflow: hidden;
+  }
+  body:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.6;
+      background-image: url('https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-position: 50% 0;
+      -ms-background-size: cover;
+      -o-background-size: cover;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-size: cover;
+  }
+    body p {
+      /*padding: 50px;*/
+      text-align: center;
+      z-index: 2;
+      position: relative;
+      color: #fff;
+  } 
+
+  body h1 {
+      /*padding: 50px;*/
+      text-align: center;
+      z-index: 2;
+      position: relative;
+      color: #fff;
+  } 
+  article {
+    background: #fff;
+    padding: 15px;
+  }
+ /*body{
+ background-image: url('https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80');
+ height: 100%;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-position: center;
+ background-size: cover; */
+ 
+</style>
+
+<body >
+
+
+
 <div class="about-section">
-    <h1>Flight Delay Prediction System</h1>
-    <h3>Why should you use this?</h3>
-  </div>
-<body>
+<h1>Flight Delay Prediction System</h1>
+<h2>Stop Guessing, Start Predicting.</h2>
+</div>
 
 
-  <div class="row">
-  <div class="column">
-    <p>A flight delay is said to occur when an airline lands or
-     takes off later than its scheduled arrival or departure time
-     respectively. Conventionally if a flight's departure time or
-     arrival time is greater than 15 minutes than its scheduled
-     departure and arrival times respectively, then it is considered that there is a departure or arrival delay with respect
-     to corresponding airports.Delays make
-passengers lose their trust on such famous and internationally
-recognized airline. An Intelligent and Automated Prediction
+<div class="row">
+<div class="column" style=/*"background-color:#aaa;"*/>
+<h2></h2>
+<p>A flight delay is said to occur when an airline lands or
+takes off later than its scheduled arrival or departure time
+respectively. Conventionally if a flight's departure time or
+arrival time is greater than 15 minutes than its scheduled
+departure and arrival times respectively, then it is considered that there is a departure or arrival delay with respect
+to corresponding airports.Delays causes inconvinience for everyone, both the passengers and the airline. An Intelligent and Automated Prediction
 System is a must in this case that can predict possible
 airline delay.</p>
-  </div>
-  <div class="column">
-    <h2></h2>
-    <p>This application uses the technology of Deep Neural Networks to predict whether a flight will be delayed or not in real time. 
-    All you have to do is fill in the details of the flight which you wish to monitor and this application will predict the 
-    delay for you. </p>
-  </div>
+</div>
+<div class="column" style=/*"background-color:#bbb;"*/>
+<h2></h2>
+<p>This application uses the technology of Deep Neural Networks to predict whether a flight will be delayed or not in real time. 
+This ensures that the predictions are accurate and to the point. Don't worry! Its very easy to use. Why wait anymore? Sign up, fill in the details of the required flight and 
+predict the delay!! </p>
+</div>
 </div>
 
 <button id="redirectHome">Go Predict Delays</button>
@@ -103,4 +173,6 @@ airline delay.</p>
   };
 </script>
 </body>
+
 </html>
+
