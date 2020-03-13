@@ -14,7 +14,7 @@ Simply input your flight details and if your flight is in our inventory, the too
 
 
 ## Application Windows
-![Landing Page](https://raw.githubusercontent.com/Siddharths8212376/Predict-Flight-Delays/master/project_views/landingPage.PNG?token=AJWJAMADNSKYRM2WWRGR27C6NMKNW)
+![Landing Page](https://raw.githubusercontent.com/Siddharths8212376/Predict-Flight-Delays/master/project_views/landingPage.PNG?token=AJWJAMB5ZRD3WD44Z3QHDM26NMLLC)
 
 ![Input Page](https://raw.githubusercontent.com/Siddharths8212376/Predict-Flight-Delays/master/project_views/inputScreen.PNG?token=AJWJAMDOFYKJQHCJILPQ7GS6NMK26)
 
