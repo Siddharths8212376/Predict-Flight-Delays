@@ -14,16 +14,44 @@
         <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+        <script type="text/javascript">
+            var org_lat = {{ (loc_org.LAT| string)[6:14]}};
+            var org_lng = {{ (loc_org.LONG| string)[6:14]}};
+            var dest_lat = {{ (loc_dest.LAT| string)[5:13]}};
+            var dest_lng = {{ (loc_dest.LONG| string)[5:13]}};
+
+            console.log(org_lng, org_lat, dest_lng, dest_lat);
+
+            console.log({{(d_time|string)[-2:]}});
+        </script>
+        <style>
+        .air{
+            color:rgba(0,0,0,0.5);
+        }
+        .delay{
+            color:red;
+        }
+        .err{
+            color:green;
+        }
+        h6{
+            justify-content: left;
+        }
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div style="width: 500; align-content: center; margin: auto;">
-        <h1>The flight will be delayed by {{prediction}} minutes</h1>
-        <h5>There could be a variance of {{error}} minutes from the predicted delay.</h5>
+        <div style="width: 600; align-content: center; margin-right: 100;margin-top:50; float:right; justify-content: center;">
+        <h3>The flight from <strong class="air">{{(origin|string)[3:-28]}}</strong> to <strong  class="air">{{(destination|string)[3:-28]}}</strong> will be delayed by <strong class="delay">{{prediction}}</strong> minutes</h3>
+        <h6>The departure time was:  {{(d_time|string)[:-2]}}:{{(d_time|string)[-2:]}}</h6>
+        <h6>The scheduled arrival time was: {{(sa|string)[:-2]}}:{{(sa|string)[-2:]}} </h6>
+        <h6>The predicted delay is <strong class="delay">{{predition}}</strong> minutes</h6>
+        <h5>There could be a variance of <strong class="err">{{error}}</strong> minutes from the predicted delay.</h5>
         <br>
-        <h1>Have a great journey ahead!!</h1>
+        <h3>Have a great journey ahead!!</h3>
         <script src="" async defer></script>
         <button id="redirectHome"  class="btn btn-primary btn-block btn-medium">Predict delay for another airline</button>
         <script type="text/javascript">
@@ -32,5 +60,53 @@
             };
         </script>
         </div>
+        <div id="map" style="width:600px;height:500px;float:left; margin-top:40px; margin-left: 100px; justify-content: center;">
+        Live Map
+        <div id="map-canvas" style="width:600px;height:400px; float:left;"></div>
+    </div>
+        <script>
+        function initMap(){
+            var map = new google.maps.Map(document.getElementById('map-canvas'), {
+                zoom: 3,
+                center: {lat: (parseFloat(org_lat) + parseFloat(dest_lat)) / 2, lng: parseFloat(org_lng)},
+                mapTypeId: 'terrain'
+        });
+            var flightPlanCoordinates = [
+                {lat: parseFloat(org_lat), lng: parseFloat(org_lng)},
+                {lat: parseFloat(dest_lat), lng: parseFloat(dest_lng)}
+            ]
+            var flightPath = new google.maps.Polyline({
+            path: flightPlanCoordinates,
+            geodesic: true,
+            strokeColor: 'blue',
+            strokeOpacity: 1.0,
+            strokeWeight: 2
+            });
+
+            var org = new google.maps.Marker({
+            position: {lat: parseFloat(org_lat), lng: parseFloat(org_lng)},
+            map: map,
+            title: 'orgin',
+            icon: {
+            url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+            }
+            });
+            var marker = new google.maps.Marker({
+            position: {lat: parseFloat(dest_lat), lng: parseFloat(dest_lng)},
+            map: map,
+            title: 'destination',
+            icon: {
+            url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+            }
+            });
+            flightPath.setMap(map);
+
+
+        }
+        </script>
+
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRAzB-3zfz2lOkBGlVdL3msdr5eHVvdbA&callback=initMap">
+        </script>
     </body>
 </html>
