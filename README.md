@@ -14,11 +14,19 @@ Simply input your flight details and if your flight is in our inventory, the too
 
 
 ## Application Windows
-![Landing Page](https://raw.githubusercontent.com/Siddharths8212376/Predict-Flight-Delays/master/project_views/landingPage.PNG?token=AJWJAMB5ZRD3WD44Z3QHDM26NMLLC)
 
-![Input Page](https://raw.githubusercontent.com/Siddharths8212376/Predict-Flight-Delays/master/project_views/inputScreen.PNG?token=AJWJAMEM5M6UPCFK3XLA6TS6NMLPQ)
+<div>
+  <p> Landing Page </p>
+  
+<a href="https://ibb.co/nRdWXrh"><img src="https://i.ibb.co/nRdWXrh/landing-Page.png" alt="landing-Page" border="0" style="padding:10px;"></a>
 
-![Result Page](https://raw.githubusercontent.com/Siddharths8212376/Predict-Flight-Delays/master/project_views/resultScreen.PNG?token=AJWJAMBGWQHGWMZQSF5OMES6NMLSY)
+<p> Input Page </p>
 
+<a href="https://ibb.co/R9hxK5C"><img src="https://i.ibb.co/R9hxK5C/input-Screen.png" alt="input-Screen" border="0"></a> 
+<p> Result Page </p>
+
+<a href="https://ibb.co/NFNMfm6"><img src="https://i.ibb.co/NFNMfm6/result-Screen.png" alt="result-Screen" border="0"></a>
+
+</div>
 
 ###### Disclaimer: The Delay Predictor is for entertainment purposes only - it is based on statistics and algorithms which are not definitive. Check with your airline for actual delay announcements. 
