@@ -36,18 +36,24 @@ def predict():
          }
     df, model = processInput(input_)
     
-    # model = keras.models.load_model('models/model-' + str(input_["carrier"]) +'.h5')
-    # df = pd.DataFrame([input_])
-    # train_stats = pd.read_csv('stats/train_stats' + str(input_["carrier"])+ '.csv')
-    # df = norm(df, train_stats)
     test_predictions_input = model.predict(df).flatten()   
     print(test_predictions_input[0])
     errors = pd.read_csv('errors/errors.csv')
     error_ = errors[errors['airline'] == input_["carrier"]]
     error_ = error_.iloc[0]['error']
-    # print(error_.iloc[0]['error'])
-    # return jsonify(str(test_predictions_input[0]))
-    return render_template("result.html", prediction=round(test_predictions_input[0], 2), error=round(error_, 2))
+    airports = pd.read_csv('airports.csv')
+    origin = airports[airports['IATA_CODE'] == input_["origin"]]
+    dest = airports[airports['IATA_CODE'] == x_[3]]
+    loc_org = {'LAT': origin['LATITUDE'], 
+               'LONG': origin['LONGITUDE']
+               }
+    loc_dest = {'LAT': dest['LATITUDE'],
+                'LONG': dest['LONGITUDE']
+                }
+    name_org = origin['AIRPORT']
+    name_dest = dest['AIRPORT']
+    d_time = input_["sd"] + input_["ddelay"]
+    return render_template("result.html", prediction=round(test_predictions_input[0], 2), error=round(error_, 2), origin=name_org, destination=name_dest, loc_org=loc_org, loc_dest=loc_dest, d_time=d_time, sa=input_["sa"])
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
