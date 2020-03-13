@@ -18,14 +18,14 @@ Simply input your flight details and if your flight is in our inventory, the too
 <div>
   <p> Landing Page </p>
   
-<a href="https://ibb.co/nRdWXrh"><img src="https://i.ibb.co/nRdWXrh/landing-Page.png" alt="landing-Page" border="0" style="padding:10px;"></a>
+<img src="https://i.ibb.co/nRdWXrh/landing-Page.png" alt="landing-Page" border="0" style="width:100%;height:100%;">
 
 <p> Input Page </p>
 
-<a href="https://ibb.co/R9hxK5C"><img src="https://i.ibb.co/R9hxK5C/input-Screen.png" alt="input-Screen" border="0"></a> 
+<img src="https://i.ibb.co/R9hxK5C/input-Screen.png" alt="input-Screen" border="0" style="width:100%;height:100%;"> 
 <p> Result Page </p>
 
-<a href="https://ibb.co/NFNMfm6"><img src="https://i.ibb.co/NFNMfm6/result-Screen.png" alt="result-Screen" border="0"></a>
+<img src="https://i.ibb.co/NFNMfm6/result-Screen.png" alt="result-Screen" border="0" style="width:100%;height:100%;">
 
 </div>
 
