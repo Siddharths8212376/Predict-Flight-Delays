@@ -13,8 +13,23 @@ Simply input your flight details and if your flight is in our inventory, the too
 
 
 
+## Application Windows
 
+<div>
+  <p> Landing Page </p>
+  
+<img src="https://i.ibb.co/nRdWXrh/landing-Page.png" alt="landing-Page" border="0" style="width:100%;height:100%;">
 
+<p> Input Page </p>
 
+<img src="https://i.ibb.co/R9hxK5C/input-Screen.png" alt="input-Screen" border="0" style="width:100%;height:100%;"> 
+<p> Result Page </p>
+
+<img src="https://i.ibb.co/NFNMfm6/result-Screen.png" alt="result-Screen" border="0" style="width:100%;height:100%;">
+
+</div>
 
 ###### Disclaimer: The Delay Predictor is for entertainment purposes only - it is based on statistics and algorithms which are not definitive. Check with your airline for actual delay announcements. 
+
+###### Inspired from these resources : 
+[Kaggle Flight Delay Prediction](https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial#Predicting-flight-delays-[Tutorial-])
