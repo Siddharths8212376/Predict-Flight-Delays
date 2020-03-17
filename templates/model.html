@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<title>KNOW MORE?</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> -->
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+<body>
+    <style type="text/css">
+        body button {
+            padding: 10px;
+            float: right;
+            margin: 50px;
+            border-radius: 20px;
+            height: 40px;
+            width: 150px;
+            z-index: inherit;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+    </style>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+            <a href="#home" class="w3-bar-item w3-button"><b>F-DeP</b>  A FLIGHT DELAYS PREDICTION MODEL</a>
+            <!-- Float links to the right. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#modeldetails" class="w3-bar-item w3-button">Model Details</a>
+                <a href="#graphs" class="w3-bar-item w3-button">Graphs</a>
+                <a href="#bestAirlines" class="w3-bar-item w3-button">Our Best Airlines</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+        <img class="w3-image" src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80" alt="Architecture" width="1500" height="800">
+        <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>F-DeP</b></span> <span class="w3-hide-small w3-text-light-grey">Model</span></h1>
+            <span class="w3-hide-small w3-text-light-grey">Go Predict Flight Delays!</span>
+        </div>
+    </header>
+    <!-- https://ibb.co/VDbJVDh
+    https://ibb.co/Lvd3xx1 -d1
+    https://ibb.co/3WK5XT3 -d2
+    https://ibb.co/fXdQhp4 -d3
+    https://ibb.co/Jrj4Vpc -d4
+    https://ibb.co/NNJLDb5 -g1-->
+    <!-- Page content -->
+    <button id="goIndex" type="button" class="button btn-dark">Go Predict Delays!</button>
+    <script type="text/javascript">
+        document.getElementById("goIndex").onclick = function() {
+            window.location = "http://127.0.0.1:5000/index";
+        };
+    </script>
+    <div class="w3-content w3-padding" style="max-width:1564px">
+
+        <!-- Model_Details Section -->
+        <div class="w3-container w3-padding-32" id="modeldetails">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Model Details</h3>
+            <p>Flight delays hurt airlines, airports, and passengers.Their prediction is crucial during the decision-making process for all players of commercial aviation. Moreover, the development of accurate prediction models for flight delays became cumbersome
+                due to the complexity of air transportation system, the number of methods for prediction, and the deluge of flight data.So we build flight delay prediction models from the Data Science perspective.
+            </p>
+        </div>
+        <div class="w3-row-padding w3-grayscale">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <h3>Type of model </h3>
+                <p class="w3-opacity">Deep Neural Network</p>
+                <img src="https://i.ibb.co/fQdskkH/d1.jpg" alt="John" style="width:100%">
+                <p>Deep learning is a class of machine learning algorithms that uses multiple layers to progressively extract higher level features from the raw input.</p>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <h3>Dense layers</h3>
+                <p class="w3-opacity">Three dense layers</p>
+                <img src="https://i.ibb.co/1KcYV0g/d2.jpg" alt="Jane" style="width:100%">
+                <p>A linear operation in which every input is connected to every output by a weight. Four dense layers have been used to render the model </p>
+
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <h3>Activation function</h3>
+                <p class="w3-opacity">ReLu</p>
+                <img src="https://i.ibb.co/GdQFK2c/d3.png" alt="Mike" style="width:100%">
+                <p>The rectified linear activation function is a piecewise linear function that will output the input directly if is positive, otherwise, it will output zero. </p>
+
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <h3>Model accuracy</h3>
+                <p class="w3-opacity">Error max= 5.08 min</p>
+                <img src="https://i.ibb.co/2c3QxMF/d4.png" alt="Dan" style="width:100%">
+                <p>With this model we were able to predict arrival delays with a maximum error of 5.08 minutes</p>
+
+            </div>
+        </div>
+
+        <!-- Graphs Section -->
+        <div class="w3-container w3-padding-32" id="graphs">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Graphs</h3>
+        </div>
+
+        <div class="w3-row-padding">
+            <div class="w3-third ">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Prediction vs Mean Delay</div>
+                    <!-- <img src="https://i.ibb.co/z2BS9Dp/g1.jpg" alt="House" style="width:100%"> -->
+                    <img src="https://i.ibb.co/B3kcRd7/download.png" alt="download">
+                </div>
+            </div>
+
+            <div class="w3-third">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Variance Histogram</div>
+                    <!-- <img src="https://i.ibb.co/z2BS9Dp/g1.jpg" alt="House" style="width:100%"> -->
+                    <!-- <img src="https://i.ibb.co/B3kcRd7/download.png" alt="download"> -->
+                    <!-- <img src="https://i.ibb.co/BLYy2Sw/crossvalidation.png" alt="crossvalidation"> -->
+                    <img src="https://i.ibb.co/7jFNNT3/histogram.png" alt="histogram">
+                </div>
+            </div>
+
+
+            <div class="w3-third">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Cross Validation</div>
+                    <!-- <img src="https://i.ibb.co/z2BS9Dp/g1.jpg" alt="House" style="width:100%"> -->
+                    <!-- <img src="https://i.ibb.co/B3kcRd7/download.png" alt="download"> -->
+                    <img src="https://i.ibb.co/BLYy2Sw/crossvalidation.png" alt="crossvalidation">
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <div class="w3-row-padding">
+        <div class="w3-half" id="bestAirlines">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Best Airlines</h3>
+            <p> This is a list of curated airlines generated by our model based on analysis of their punctuality:
+            </p>
+            <ol>
+                <li><b>Southwest Airlines, WN</b></li>
+                <li><b>Delta Airlines, DL</b></li>
+                <li><b>Atlantic Southeast Airlines, EV</b></li>
+                <li><b>Skywest Airlines, OO</b></li>
+                <li><b>American Airlines, AA</b></li>
+            </ol>
+        </div>
+        <div class="w3-half">
+            <div class="w3-display-container">
+                <img style="padding-bottom: 20px; padding-top: 20px;"src="https://i.ibb.co/K9Bfm0b/ontimes.png" alt="best_airlines" border="0">
+            </div>
+    </div>
+</div>
+
+
+        <!-- End page content -->
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16">
+        <p>Powered by <a href="#" title="F-DEP©2020" target="_blank" class="w3-hover-text-green">F-DeP</a></p>
+    </footer>
+
+</body>
+
+</html>
