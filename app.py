@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('about.html')
+    return render_template('model.html')
 
 @app.route('/index')
 def index():
@@ -27,23 +27,37 @@ def predict():
     print(x_)
     input_ = {
           "dayOfWeek": int(x_[0]),
-          "carrier": x_[1], 
+          "carrier": x_[1].split(',')[0], 
           "origin": x_[2],
           "sd": int(x_[4]), 
           "ddelay": int(x_[5]),
           "sa": int(x_[6]),
           "dist": int(x_[7])
          }
-    df, model = processInput(input_)
+    airports = pd.read_csv('airports.csv')
     
+    df_air = pd.read_csv('airports.csv')
+    # print(airport.head())
+    codes = df_air['IATA_CODE']
+    names = df_air['AIRPORT']
+    df_air = df_air[['IATA_CODE', 'AIRPORT']]
+    dict_ = {}
+    for code, name in zip(codes, names):
+        dict_[name] = code
+    origin_code = dict_[input_["origin"]]
+    input_["origin"] = origin_code
+    df, model = processInput(input_)
+    dest_code = dict_[x_[3]]
     test_predictions_input = model.predict(df).flatten()   
     print(test_predictions_input[0])
     errors = pd.read_csv('errors/errors.csv')
     error_ = errors[errors['airline'] == input_["carrier"]]
     error_ = error_.iloc[0]['error']
-    airports = pd.read_csv('airports.csv')
-    origin = airports[airports['IATA_CODE'] == input_["origin"]]
-    dest = airports[airports['IATA_CODE'] == x_[3]]
+    
+    print(origin_code)
+    origin = airports[airports['IATA_CODE'] == origin_code]
+    
+    dest = airports[airports['IATA_CODE'] == dest_code]
     loc_org = {'LAT': origin['LATITUDE'], 
                'LONG': origin['LONGITUDE']
                }
