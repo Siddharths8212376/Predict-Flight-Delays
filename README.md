@@ -2,18 +2,30 @@
 A software solution to predict flight delays...
 
 ## What is it?
+___
 
 Flying for business is full of uncertainty. The Delay Predictor is a  AI technology tool tha help you understand some of that uncertainty and predict flight delay based on input provided. We give you up to the minute forecasts so you're the first to know if your flight is at risk of being delayed.
 
 
 ## How does it work?
+___
 
 The Delay Predictor provides flight information  in advance of your departure date.
 Simply input your flight details and if your flight is in our inventory, the tool will provide you with the likelihood of your flight being delayed and even how long your delay may be.
 
+## Technologies Used
+___
 
+This is a web application which was implemented using the __`Flask`__ api in __`python3`__. The model was created using the __`keras`__ library in Tensorflow, the machine learning library by Google. 
+
+For running the application on your system, do __`pip install -r requirements.txt`__
+
+Then run application with __`python app.py`__
+
+All contributions are welcomed. To contribute, fork this repository, make changes and make a pull request.
 
 ## Application Windows
+___
 
 <div>
   <p> Landing Page </p>
@@ -56,4 +68,5 @@ Simply input your flight details and if your flight is in our inventory, the too
 ###### Disclaimer: The Delay Predictor is for entertainment purposes only - it is based on statistics and algorithms which are not definitive. Check with your airline for actual delay announcements. 
 
 ###### Inspired from these resources : 
+___
 [Kaggle Flight Delay Prediction](https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial#Predicting-flight-delays-[Tutorial-])
