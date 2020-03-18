@@ -28,25 +28,25 @@ All contributions are welcomed. To contribute, fork this repository, make change
 ___
 
 <div>
-  <p> Landing Page </p>
+  <b>Landing Page</b>
 
 
 <a href="https://ibb.co/BCm9nHv"><img src="https://i.ibb.co/FD9FHkc/Capture.png" alt="Capture" border="0"  style="width:100%;height:100%;"></a>
 
-<p> Input Page </p>
+<b>Input Page</b>
 <!--<a href="https://ibb.co/Kb9yWcm"><img src="https://i.ibb.co/RYCHcG7/Capture3.png" alt="Capture3" border="0"></a>-->
 <a href="https://ibb.co/r0BgrjY"><img src="https://i.ibb.co/bm4x90T/Capture4.png" alt="Capture4" border="0"  style="width:100%;height:100%;"></a>
 
 
-<p> Output Page </p>
+<b>Output Page</b>
 
 <a href="https://ibb.co/kxtkh7h"><img src="https://i.ibb.co/f2sBCgC/Capture5.png" alt="Capture5" border="0"  style="width:100%;height:100%;"></a>
 
-<p> Model details </p>
+<b>Model details</b>
 
 <a href="https://ibb.co/WpZnmgJ"><img src="https://i.ibb.co/1J1ZF8W/Capture1.png" alt="Capture1" border="0"  style="width:100%;height:100%;"></a>
 
-<p> Graphs</p>
+<b>Graphs</b>
 
 <a href="https://ibb.co/vL6jM0q"><img src="https://i.ibb.co/KVpr8Th/Capture2.png" alt="Capture2" border="0"  style="width:100%;height:100%;"></a>
 
@@ -56,10 +56,10 @@ ___
   
 <!--<img src="https://i.ibb.co/nRdWXrh/landing-Page.png" alt="landing-Page" border="0" style="width:100%;height:100%;">
 
-<p> Input Page </p>
+<b>Input Page</b>
 
 <img src="https://i.ibb.co/R9hxK5C/input-Screen.png" alt="input-Screen" border="0" style="width:100%;height:100%;"> 
-<p> Result Page </p>
+<b>Result Page</b>
 
 <img src="https://i.ibb.co/NFNMfm6/result-Screen.png" alt="result-Screen" border="0" style="width:100%;height:100%;">-->
 
