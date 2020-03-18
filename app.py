@@ -69,8 +69,18 @@ def predict():
     d_time = input_["sd"] + input_["ddelay"]
     if d_time - d_time // 100 > 59:
         d_time += 40
+    mer = "am"
+    if d_time < 1200:
+        mer_d = "am"
+    else:
+        mer_d = "pm"
+    arr_d = "am" 
+    if input_["sa"] > 1200:
+        arr_d = "pm"
+    else:
+        arr_d = "am"
         
-    return render_template("result.html", prediction=round(test_predictions_input[0], 2), error=round(error_, 2), origin=name_org, destination=name_dest, loc_org=loc_org, loc_dest=loc_dest, d_time=d_time, sa=input_["sa"])
+    return render_template("result.html", prediction=round(test_predictions_input[0], 2), error=round(error_, 2), origin=name_org, destination=name_dest, loc_org=loc_org, loc_dest=loc_dest, d_time=d_time, sa=input_["sa"], mer_d=mer_d, arr_d=arr_d)
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
