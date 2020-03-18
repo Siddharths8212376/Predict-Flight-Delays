@@ -67,6 +67,9 @@ def predict():
     name_org = origin['AIRPORT']
     name_dest = dest['AIRPORT']
     d_time = input_["sd"] + input_["ddelay"]
+    if d_time - d_time // 100 > 59:
+        d_time += 40
+        
     return render_template("result.html", prediction=round(test_predictions_input[0], 2), error=round(error_, 2), origin=name_org, destination=name_dest, loc_org=loc_org, loc_dest=loc_dest, d_time=d_time, sa=input_["sa"])
 
 @app.route('/predict_api',methods=['POST'])
