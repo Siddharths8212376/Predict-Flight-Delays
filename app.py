@@ -67,15 +67,21 @@ def predict():
     name_org = origin['AIRPORT']
     name_dest = dest['AIRPORT']
     d_time = input_["sd"] + input_["ddelay"]
-    if d_time - d_time // 100 > 59:
+    print(d_time)
+    if d_time < 0:
+        d_time = 2359 + d_time
+    if d_time % 100 > 59:
         d_time += 40
+    if d_time > 2359:
+        d_time -= 2359
+    
     mer = "am"
-    if d_time < 1200:
+    if d_time >= 0 and d_time < 1200:
         mer_d = "am"
     else:
         mer_d = "pm"
     arr_d = "am" 
-    if input_["sa"] > 1200:
+    if input_["sa"] >= 1200:
         arr_d = "pm"
     else:
         arr_d = "am"
