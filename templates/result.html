@@ -26,6 +26,8 @@
             console.log(org_lng, org_lat, dest_lng, dest_lat);
 
             console.log({{(d_time|string)[-2:]}});
+            console.log({{distance}});
+            console.log({{t_time}});
         </script>
         <style>
         .air{
@@ -63,7 +65,7 @@
         <h6>The departure time was:  {{(d_time|string)[:-2]}}:{{(d_time|string)[-2:]}} {{mer_d}}</h6>
         <h6>The scheduled arrival time was: {{(sa|string)[:-2]}}:{{(sa|string)[-2:]}} {{arr_d}}</h6>
         <h6>The predicted delay is <strong class="delay">{{prediction}}</strong> minutes</h6>
-        <h5>Your total travel time: {{(((sa + prediction) - (d_time if d_time < 1200 else d_time-1200))|string)[:1]}} hours and {{(((sa + prediction) - (d_time if d_time < 1200 else d_time-1200))|string)[1:3]}} minutes.</h5>
+        <h5>Your total travel time will be: {{t_hrs}} hours {{t_mins}} minutes.</h5>
         <h5>There could be a deviation of <strong class="err">{{error}}</strong> minutes in the predicted delay.</h5>
         <br>
         <h3>Have a great journey ahead!!</h3>
