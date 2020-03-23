@@ -77,11 +77,11 @@ def predict():
     print(loc_dest['LAT'])
     print(loc_dest['LONG'])
     print(str(loc_org['LAT'])[7:15])
-    org_lat = float(str(loc_org['LAT'])[7:15])
-    org_long = float(str(loc_org['LONG'])[6:15])
+    org_lat = float(str(loc_org['LAT'])[6:14])
+    org_long = float(str(loc_org['LONG'])[6:14])
 
-    dest_lat = float(str(loc_dest['LAT'])[7:15])
-    dest_long = float(str(loc_dest['LONG'])[6:15])
+    dest_lat = float(str(loc_dest['LAT'])[5:13])
+    dest_long = float(str(loc_dest['LONG'])[5:13])
     
     flights_distance = 3963.0 * math.acos((math.sin(org_lat) * math.sin(dest_lat)) + math.cos(org_lat) * math.cos(dest_lat) * math.cos(dest_long - org_long))
     print("flights distance is ", flights_distance)
@@ -136,7 +136,7 @@ def predict():
     t_hours = travel_time // 3600
     t_minutes = (travel_time % 3600) // 60
     
-    return render_template("result.html", prediction=round(test_predictions_input[0], 2), error=round(error_, 2), origin=name_org, destination=name_dest, loc_org=loc_org, loc_dest=loc_dest, d_time=d_time, sa=input_["sa"], mer_d=mer_d, arr_d=arr_d, distance=flights_distance, t_hrs=t_hours, t_mins=t_minutes)
+    return render_template("result.html", prediction=round(test_predictions_input[0], 2), error=round(error_, 2), origin=name_org, destination=name_dest, loc_org=loc_org, loc_dest=loc_dest, d_time=d_time, sa=input_["sa"], mer_d=mer_d, arr_d=arr_d, distance=flights_distance, t_hrs=t_hours, t_mins=t_minutes, origin_code=origin_code, dest_code=dest_code, carrierN=input_["carrier"])
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
