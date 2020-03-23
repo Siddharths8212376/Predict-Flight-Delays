@@ -28,6 +28,7 @@
             console.log({{(d_time|string)[-2:]}});
             console.log({{distance}});
             console.log({{t_time}});
+            console.log("{{(carrierN|string)}}");
         </script>
         <style>
         .air{
@@ -61,14 +62,14 @@
 
 
         <div class="w3-container w3-padding-32" style="width: 600; align-content: center; margin-right: 100;margin-top:50; float:right; justify-content: center;">
-        <h3>The flight from <strong class="air">{{(origin|string)[3:-28]}}</strong> to <strong  class="air">{{(destination|string)[3:-28]}}</strong> will be delayed by <strong class="delay">{{prediction}}</strong> minutes</h3>
+        <h3>The flight from <strong class="air">{{(origin|string)[3:-28]}} ({{origin_code}})</strong> to <strong  class="air">{{(destination|string)[3:-28]}} ({{dest_code}})</strong> will be delayed by <strong class="delay">{{prediction}}</strong> minutes</h3>
+        <h5>The airline was {{carrierN|string}} </h5>
         <h6>The departure time was:  {{(d_time|string)[:-2]}}:{{(d_time|string)[-2:]}} {{mer_d}}</h6>
         <h6>The scheduled arrival time was: {{(sa|string)[:-2]}}:{{(sa|string)[-2:]}} {{arr_d}}</h6>
         <h6>The predicted delay is <strong class="delay">{{prediction}}</strong> minutes</h6>
         <h5>Your total travel time will be: {{t_hrs}} hours {{t_mins}} minutes.</h5>
         <h5>There could be a deviation of <strong class="err">{{error}}</strong> minutes in the predicted delay.</h5>
         <br>
-        <h3>Have a great journey ahead!!</h3>
         <script src="" async defer></script>
         <button id="redirectHome"  class="btn btn-primary btn-block btn-medium">Predict delay for another airline</button>
         <script type="text/javascript">
@@ -77,9 +78,9 @@
             };
         </script>
         </div>
-        <div id="map" class="w3-container w3-padding-32" style="width:600px;height:500px;float:left; margin-top:40px; margin-left: 100px; justify-content: center;">
+        <div id="map" class="w3-container w3-padding-32" style="width:700px;height:500px;float:left; margin-top:40px; margin-left: 10px; justify-content: center;">
         <b>Live Map</b>
-        <div id="map-canvas" style="width:600px;height:400px; float:left;"></div>
+        <div id="map-canvas" style="width:700px;height:400px; float:left;"></div>
     </div>
         <script>
         function initMap(){
@@ -134,16 +135,20 @@
         <div class="w3-row-padding">
             <div class="w3-half">
                 <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding">Classification of Delays</div>
-                    <img style="padding-bottom: 20px; padding-top: 20px;"src="https://i.ibb.co/GPCXGx3/delays-classification.png" alt="delays-classification" border="0">
-                </div>
+                    <div  class="w3-display-topleft w3-black w3-padding">OTPs-{{carrierN}}</div>
+                    <div id="dynamic_image"> 
+                    </div>
+
         </div>
+        </div>
+        
         <div class="w3-half">
-                <div class="w3-display-container">
-                    <div class="w3-display-topleft w3-black w3-padding">Best Airlines</div>
-                    <img style="padding-bottom: 20px; padding-top: 20px;"src="https://i.ibb.co/K9Bfm0b/ontimes.png" alt="best_airlines" border="0">
-                </div>
+            <h4>Historical Inferences</h4>
+
+            The airline <strong>{{carrierN}}</strong> has been recording these OTPs during the analysis of the data during the period <strong>January-March, 2015</strong>. There was a variance of <strong>{{error}} minutes</strong> while
+            predicting the delays.
         </div>
+
         <div class="w3-container w3-padding-32" id="graphs">
             <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Model Details</h3>
         </div>
@@ -151,7 +156,44 @@
             <p>The given prediction model used <b>deep neural network</b> architecture with <i><b>3</b> deep layers</i> of <i><b>64 neurons</b></i> each. 
             The activation function used was <i><b>ReLU</b></i> for this purpose. The model predicts with an accuracy of {{mae}} minutes for this airline </p>
         </div>
+        <div class="w3-threequarter" >
+            <br>
+            <h4>Visit us for accurate flight delay predictions!</h4>
+            <br>
         </div>
+        </div>
+ 
+        <script type="text/javascript">
+            var flights = {
+                "AA" : "https://i.ibb.co/H7FWv5s/distribution-AAdelays.png",
+                'AS' : "https://i.ibb.co/px7zH0g/distribution-ASdelays.png",
+                'B6' : "https://i.ibb.co/10rcwZw/distribution-B6delays.png",
+                'DL' : "https://i.ibb.co/wJ9yBD2/distribution-DLdelays.png",
+                'EV' : "https://i.ibb.co/wLPy9m8/distribution-EVdelays.png",
+                'F9' : "https://i.ibb.co/1mB55Wb/distribution-F9delays.png",
+                'HA' : "https://i.ibb.co/tbhJfVd/distribution-HAdelays.png",
+                'MQ' : "https://i.ibb.co/SB8VY0q/distribution-MQdelays.png",
+                'NK' : "https://i.ibb.co/BsqtqSM/distribution-NKdelays.png",
+                'OO' : "https://i.ibb.co/WHSM8Hq/distribution-OOdelays.png",
+                'UA' : "https://i.ibb.co/6W1LPdr/distribution-UAdelays.png",
+                'US' : "https://i.ibb.co/TTnrzBV/distribution-USdelays.png",
+                'VX' : "https://i.ibb.co/FKZCGGD/distribution-VXdelays.png",
+                'WN' : "https://i.ibb.co/30mWBm7/distribution-WNdelays.png"
+
+            }
+            
+
+            function addImage(){
+                var img=document.createElement('img');
+                console.log(flights["AA"]);
+                img.src = flights["{{carrierN|string}}"];
+                document.getElementById('dynamic_image').appendChild(img);
+            }
+            addImage();
+            
+        </script>
+
+        
 
         <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-16">
