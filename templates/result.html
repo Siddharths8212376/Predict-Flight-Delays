@@ -69,8 +69,8 @@
             <a href="#home" class="w3-bar-item w3-button"><b>Flight Delay Predictions</b></a>
             <!-- Float links to the right. Hide them on small screens -->
             <div class="w3-right w3-hide-small">               
-             <a href="#best" class="w3-bar-item w3-button">Best Airlines</a>
-            <a href="#modeldetails" class="w3-bar-item w3-button">Model Details</a>
+             <a href="#best" class="w3-bar-item w3-button">OTP Analysis</a>
+            <a href="#modeldetails" class="w3-bar-item w3-button">Inferences</a>
 
             </div>
         </div>
@@ -83,7 +83,7 @@
         <h6>The departure time was:  {{(d_time|string)[:-2]}}:{{(d_time|string)[-2:]}} {{mer_d}}</h6>
         <h6>The scheduled arrival time was: {{(sa|string)[:-2]}}:{{(sa|string)[-2:]}} {{arr_d}}</h6>
         <h6>The predicted delay is <strong class="delay">{{prediction}}</strong> minutes</h6>
-        <h5>Your total travel time will be: {{t_hrs}} hours {{t_mins}} minutes.</h5>
+        <h5>Expected total travel time would be: {{t_hrs}} hours {{t_mins}} minutes.</h5>
         <h5>There could be a deviation of +/- <strong class="err">{{error}}</strong> minutes in the predicted delay.</h5>
         <br>
         <script type="text/javascript">
@@ -151,36 +151,39 @@
 
 
         <div class="w3-container w3-padding-32" id="best">
-            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Best Airlines Based on Punctuality</h3>
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">OTP Analysis of the Airline {{carrierN}}</h3>
         </div>
 
         <div class="w3-row-padding">
             <div class="w3-half">
                 <div class="w3-display-container">
-                    <div  class="w3-display-topleft w3-black w3-padding">OTPs-{{carrierN}}</div>
+                    <div  class="w3-display-topleft w3-black " style="width:40px;height:20px; font-size:x-small;">OTPs-{{carrierN}}</div>
                     <div id="dynamic_image"> 
                     </div>
 
         </div>
         </div>
-        
-        <div class="w3-half">
-            <h4>Historical Inferences</h4>
 
-            The airline <strong>{{carrierN}}</strong> has been recording these OTPs during the analysis of the data during the period <strong>January-March, 2015</strong>. There was a variance of <strong>{{error}} minutes</strong> while
-            predicting the delays.
-        </div>
+        <div class="w3-half">
+            <h4>Possible Reasons for the Delay</h4>
+            <ul>
+                <li>The delay could be due to <strong>unforseen weather changes</strong>.</li>
+                <li>The airplane could have faced some departure delays(Delays due to <strong>airport congestion</strong> or <strong>traffic controls</strong>).</li>
+            </ul>
+    </div>
+
 
         <div class="w3-container w3-padding-32" id="graphs">
-            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Model Details</h3>
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Historical Inferences</h3>
         </div>
         <div class="w3-half" id="modeldetails">
-            <p>The given prediction model used <b>deep neural network</b> architecture with <i><b>3</b> deep layers</i> of <i><b>64 neurons</b></i> each. 
-            The activation function used was <i><b>ReLU</b></i> for this purpose. The model predicts with an accuracy of {{mae}} minutes for this airline </p>
+            
+        <p>The airline <strong>{{carrierN}}</strong> has been recording these OTPs during the analysis of the data during the period <strong>January-March, 2015</strong>. There was a variance of <strong>{{error}} minutes</strong> while
+            predicting the delays. 
         </div>
         <div class="w3-threequarter" >
             <br>
-            <h4>Visit us for accurate flight delay predictions!</h4>
+            <h4 class="text-muted">VISIT US FOR ACCURATE FLIGHT DELAY PREDICTIONS!</h4>
             <br>
         </div>
         </div>
