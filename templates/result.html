@@ -29,6 +29,22 @@
             console.log({{distance}});
             console.log({{t_time}});
             console.log("{{(carrierN|string)}}");
+            var carriers = {
+                            'UA': 'United Air Lines Inc.',
+                            'AA': 'American Airlines Inc.',
+                            'US': 'US Airways Inc.',
+                            'F9': 'Frontier Airlines Inc.',
+                            'B6': 'JetBlue Airways',
+                            'OO': 'Skywest Airlines Inc.',
+                            'AS': 'Alaska Airlines Inc.',
+                            'NK': 'Spirit Air Lines',
+                            'WN': 'Southwest Airlines Co.',
+                            'DL': 'Delta Air Lines Inc.',
+                            'EV': 'Atlantic Southeast Airlines',
+                            'HA': 'Hawaiian Airlines Inc.',
+                            'MQ': 'American Eagle Airlines Inc.',
+                            'VX': 'Virgin America'
+                        }
         </script>
         <style>
         .air{
@@ -62,14 +78,20 @@
 
 
         <div class="w3-container w3-padding-32" style="width: 600; align-content: center; margin-right: 100;margin-top:50; float:right; justify-content: center;">
-        <h3>The flight from <strong class="air">{{(origin|string)[3:-28]}} ({{origin_code}})</strong> to <strong  class="air">{{(destination|string)[3:-28]}} ({{dest_code}})</strong> will be delayed by <strong class="delay">{{prediction}}</strong> minutes</h3>
-        <h5>The airline was {{carrierN|string}} </h5>
+        <h3>The <span class="air" id="airline_info"></span> flight from <strong class="air">{{(origin|string)[3:-28]}} ({{origin_code}})</strong> to <strong  class="air">{{(destination|string)[3:-28]}} ({{dest_code}})</strong> will be delayed by <strong class="delay">{{prediction}}</strong> minutes</from>
+        
         <h6>The departure time was:  {{(d_time|string)[:-2]}}:{{(d_time|string)[-2:]}} {{mer_d}}</h6>
         <h6>The scheduled arrival time was: {{(sa|string)[:-2]}}:{{(sa|string)[-2:]}} {{arr_d}}</h6>
         <h6>The predicted delay is <strong class="delay">{{prediction}}</strong> minutes</h6>
         <h5>Your total travel time will be: {{t_hrs}} hours {{t_mins}} minutes.</h5>
-        <h5>There could be a deviation of <strong class="err">{{error}}</strong> minutes in the predicted delay.</h5>
+        <h5>There could be a deviation of +/- <strong class="err">{{error}}</strong> minutes in the predicted delay.</h5>
         <br>
+        <script type="text/javascript">
+
+            var airlineInfo = carriers["{{(carrierN|string)}}"] + "({{carrierN|string}})";
+            document.getElementById("airline_info").innerHTML = airlineInfo;
+
+        </script>
         <script src="" async defer></script>
         <button id="redirectHome"  class="btn btn-primary btn-block btn-medium">Predict delay for another airline</button>
         <script type="text/javascript">
