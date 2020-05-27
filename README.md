@@ -32,14 +32,14 @@ ___
 <div>
   <b>Landing Page</b>
 
-<a href="https://ibb.co/WvJvhtQ"><img src="https://i.ibb.co/Df2fJpN/Capture.png" alt="Capture" border="0"></a>
+<a href="https://ibb.co/WvJvhtQ"><img src="https://i.ibb.co/Df2fJpN/Capture.png" alt="Capture" border="0" style="width:100%;height:100%;" ></a>
 
 <b>Passenger-Input Page</b>
 <!--<a href="https://ibb.co/Kb9yWcm"><img src="https://i.ibb.co/RYCHcG7/Capture3.png" alt="Capture3" border="0"></a>-->
-<a href="https://ibb.co/SsPTjVX"><img src="https://i.ibb.co/5M6D0sW/passengerindex.png" alt="passengerindex" border="0"></a>
+<a href="https://ibb.co/SsPTjVX"><img src="https://i.ibb.co/5M6D0sW/passengerindex.png" alt="passengerindex" border="0" style="width:100%;height:100%;"></a>
 
 <b>Passenger-Output Page</b>
-<a href="https://ibb.co/mC2SqVg"><img src="https://i.ibb.co/xSB3jtd/passengerresult.png" alt="passengerresult" border="0"></a>
+<a href="https://ibb.co/mC2SqVg"><img src="https://i.ibb.co/xSB3jtd/passengerresult.png" alt="passengerresult" border="0" style="width:100%;height:100%;"></a>
 
 <b>Airline authority-Output Page</b>
 
@@ -54,7 +54,7 @@ ___
 <a href="https://ibb.co/vL6jM0q"><img src="https://i.ibb.co/KVpr8Th/Capture2.png" alt="Capture2" border="0"  style="width:100%;height:100%;"></a>
 
 <b>Best airlines</b>
-<a href="https://ibb.co/XWdK624"><img src="https://i.ibb.co/kGrwzHy/bestairlines.png" alt="bestairlines" border="0"></a>
+<a href="https://ibb.co/XWdK624"><img src="https://i.ibb.co/kGrwzHy/bestairlines.png" alt="bestairlines" border="0" style="width:100%;height:100%;"></a>
 
 
 
